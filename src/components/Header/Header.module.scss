@@ -1,0 +1,43 @@
+.header {
+  margin: 32px 0 32px 32px;
+}
+
+.headerWrapper {
+  padding: 35px 0;
+  display: grid;
+  grid-template-rows: auto 200px auto;
+  row-gap: 75px;
+
+  width: 96px;
+  height: 93vh;
+  align-content: space-between;
+  border-radius: 20px;
+  background: var(--semiDark-blue);
+}
+
+.headerLogo {
+  display: grid;
+  justify-content: center;
+}
+
+.headerNavButtonsWrapper {
+  display: grid;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.headerIcons {
+  &:hover path {
+    fill: var(--white);
+  }
+}
+
+.headerAvatarImageWrapper {
+  display: grid;
+  justify-content: center;
+}
+
+.headerAvatarImage {
+  width: 40px;
+  height: 40px;
+}

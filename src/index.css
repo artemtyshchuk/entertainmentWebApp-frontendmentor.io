@@ -1,0 +1,24 @@
+@import-normalize;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --main-color: #0079ff;
+  --red-color: #fc4747;
+  --dark-blue: #10141e;
+  --greyish-blue: #5a698f;
+  --semiDark-blue: #161d2f;
+  --white: #fff;
+}
+
+body {
+  font-family: "Outfit", serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--dark-blue);
+}
