@@ -1,0 +1,40 @@
+.search {
+  background-color: var(--dark-blue);
+  padding-top: 32px;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.searchIcon {
+  display: grid;
+  align-self: start;
+}
+
+.input {
+  margin-left: 24px;
+  padding-bottom: 15px;
+  height: 46px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: var(--white);
+  background-color: var(--dark-blue);
+
+  font-family: "Outfit";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.input:focus {
+  border-bottom: 1px solid var(--greyish-blue);
+  caret-color: var(--red-color);
+}

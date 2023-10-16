@@ -15,6 +15,14 @@
   --white: #fff;
 }
 
+.container {
+  width: 100%;
+  max-width: 89%;
+  padding-top: 32px;
+  margin-left: 164px;
+  /* padding: 0 32px; */
+}
+
 body {
   font-family: "Outfit", serif;
   font-weight: 300;

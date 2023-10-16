@@ -1,4 +1,5 @@
 .header {
+  position: fixed;
   margin: 32px 0 32px 32px;
 }
 
@@ -26,7 +27,12 @@
   align-content: space-between;
 }
 
+.headerIconsActive {
+  fill: var(--white);
+}
+
 .headerIcons {
+  fill: var(--greyish-blue);
   &:hover path {
     fill: var(--white);
   }

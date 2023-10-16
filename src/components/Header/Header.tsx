@@ -6,11 +6,14 @@ import { ReactComponent as NavTvSeriesIcon } from "assets/icon-nav-tv-series.svg
 import { ReactComponent as NavBookmarkIcon } from "assets/icon-nav-bookmark.svg";
 import avatarImage from "assets/image-avatar.png";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useRoutes } from "react-router-dom";
 
 interface HeaderProps {}
 
 export const Header = ({}: HeaderProps) => {
+  const router = useLocation();
+  const currentRoute = router.pathname;
+
   return (
     <header className={styles.header}>
       <div className={styles.headerWrapper}>
@@ -20,22 +23,46 @@ export const Header = ({}: HeaderProps) => {
         <div className={styles.headerNavButtonsWrapper}>
           <div>
             <Link to={"/"}>
-              <NavHomeIcon className={styles.headerIcons} />
+              <NavHomeIcon
+                className={
+                  currentRoute === "/"
+                    ? styles.headerIconsActive
+                    : styles.headerIcons
+                }
+              />
             </Link>
           </div>
           <div>
             <Link to={"/movies"}>
-              <NavMoviesIcon className={styles.headerIcons} />
+              <NavMoviesIcon
+                className={
+                  currentRoute === "/movies"
+                    ? styles.headerIconsActive
+                    : styles.headerIcons
+                }
+              />
             </Link>
           </div>
           <div>
             <Link to={"/tv-series"}>
-              <NavTvSeriesIcon className={styles.headerIcons} />
+              <NavTvSeriesIcon
+                className={
+                  currentRoute === "/tv-series"
+                    ? styles.headerIconsActive
+                    : styles.headerIcons
+                }
+              />
             </Link>
           </div>
           <div>
             <Link to={"/bookmarked"}>
-              <NavBookmarkIcon className={styles.headerIcons} />
+              <NavBookmarkIcon
+                className={
+                  currentRoute === "/bookmarked"
+                    ? styles.headerIconsActive
+                    : styles.headerIcons
+                }
+              />
             </Link>
           </div>
         </div>
