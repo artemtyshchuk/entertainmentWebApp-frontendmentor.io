@@ -1,7 +1,7 @@
 export type DataType = {
   title: string;
   thumbnail: {
-    trending: {
+    trending?: {
       small: string;
       large: string;
     };
@@ -14,6 +14,6 @@ export type DataType = {
   year: number;
   category: string;
   rating: string;
-  isBookmarked: boolean;
-  isTrendin: boolean;
+  isTrending: boolean;
+  isBookmarked?: boolean;
 };

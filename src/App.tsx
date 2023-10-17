@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage data={[]} />} />
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/tv-series" element={<TVSeriesPage />} />
           <Route path="/bookmarked" element={<BookmarkedPage />} />
