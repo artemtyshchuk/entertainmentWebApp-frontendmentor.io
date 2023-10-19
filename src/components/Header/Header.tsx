@@ -6,7 +6,7 @@ import { ReactComponent as NavTvSeriesIcon } from "assets/icon-nav-tv-series.svg
 import { ReactComponent as NavBookmarkIcon } from "assets/icon-nav-bookmark.svg";
 import avatarImage from "assets/image-avatar.png";
 
-import { Link, useLocation, useRoutes } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface HeaderProps {}
 

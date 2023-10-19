@@ -1,0 +1,81 @@
+.trendingCard {
+}
+
+.trendingCardWrapper {
+  position: relative;
+  padding-left: 24px;
+  padding-bottom: 24px;
+  cursor: pointer;
+}
+
+.trendingCardImage {
+  width: 470px;
+  height: 230px;
+  border-radius: 8px;
+}
+
+.trendingCardInfoWrapper {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.trendingCardExtraInfo {
+  width: 160px;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  justify-content: space-around;
+}
+
+.year {
+  font-family: "Outfit";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: var(--white);
+}
+
+.dot {
+  font-size: 15px;
+  color: var(--white);
+}
+
+.category {
+  font-family: "Outfit";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: var(--white);
+}
+
+.rating {
+  font-family: "Outfit";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: var(--white);
+}
+
+.title {
+  font-family: "Outfit";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--white);
+}
+
+.icon {
+  fill: var(--white);
+}
+
+.icon path {
+  width: 12px;
+  height: 12px;
+}
