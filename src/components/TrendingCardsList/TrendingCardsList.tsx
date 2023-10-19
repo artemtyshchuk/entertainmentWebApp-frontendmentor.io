@@ -1,6 +1,8 @@
 import { TrendingCard } from "components/TrendingCard/TrendingCard";
 import styles from "./TrendingCardsList.module.scss";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { DataType, TrendingCardsType } from "types";
 
 interface TrendingCardsListProps {
@@ -14,6 +16,7 @@ export const TrendingCardsList = ({ cards }: TrendingCardsListProps) => {
     slidesToShow: 2.5,
     slidesToScroll: 1,
     arrows: false,
+    swipeToSlide: true,
     responsive: [
       {
         breakpoint: 1440,

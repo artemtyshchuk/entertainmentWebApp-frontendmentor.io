@@ -1,17 +1,23 @@
 import { DataType } from "types";
-import data from "./db.json";
 import { bookmarkUtils } from "./bookmarkUtils";
 
-export const modifyData = async (shows: DataType[] = data) => {
+export const modifyData = async (shows: DataType[]) => {
   const userBookmarkedShows = await bookmarkUtils();
 
-  console.log(shows);
+  const res = await fetch("db.json");
+  const data = (await res.json()) as DataType[];
 
-  return shows.map((show) => {
-    if (userBookmarkedShows.includes(show.title)) {
-      return { ...show, isBookmarked: true };
-    } else {
-      return { ...show, isBookmarked: false };
-    }
-  });
+  const filteredData = data
+    .filter((show) => show.isTrending === true)
+    .map((show) => ({ ...show, isBookmarked: true }));
+
+  return filteredData;
+
+  // return data.map((show) => {
+  //   if (userBookmarkedShows.includes(show.title)) {
+  //     return { ...show, isBookmarked: true };
+  //   } else {
+  //     return { ...show, isBookmarked: false };
+  //   }
+  // });
 };

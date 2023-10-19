@@ -13,17 +13,8 @@ export async function bookmarkUtils(
     options.body = JSON.stringify({ title });
   }
 
-  const response = await fetch("./db.json", options);
+  const response = await fetch("db.json", options);
   const data = await response.json();
-  console.log(data);
 
-  if (!response) {
-    return {
-      error: {
-        message: data.message,
-        field: data.field,
-      },
-    };
-  }
   return data;
 }

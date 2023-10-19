@@ -1,7 +1,7 @@
 import { Search } from "components/Search";
 import { TrendingCardsList } from "components/TrendingCardsList";
 import { useCallback, useEffect, useState } from "react";
-import { DataType, TrendingCardsType } from "types";
+import { DataType } from "types";
 import { modifyData } from "utils/data";
 
 interface HomePageProps {
@@ -14,8 +14,9 @@ export const HomePage = ({ data }: HomePageProps) => {
 
   const fetchData = useCallback(async () => {
     const result = await modifyData(data);
+    console.log(result);
     setShows(result);
-    // setIsLoading(false);
+    setIsLoading(false);
   }, [data]);
 
   useEffect(() => {
@@ -25,7 +26,8 @@ export const HomePage = ({ data }: HomePageProps) => {
   return (
     <div>
       <Search placeholder={"Search for movies or TV series"} />
-      <TrendingCardsList cards={shows} />
+
+      {isLoading ? "Loading" : <TrendingCardsList cards={shows} />}
     </div>
   );
 };

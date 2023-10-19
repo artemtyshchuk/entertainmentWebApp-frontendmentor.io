@@ -23,6 +23,22 @@
   /* padding: 0 32px; */
 }
 
+.hoverCardHiden {
+  opacity: 0;
+}
+
+.hoverCardVisible {
+  position: absolute;
+  left: 24px;
+  top: 0;
+  right: 29px;
+  bottom: 24px;
+  background-color: black;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+
 body {
   font-family: "Outfit", serif;
   font-weight: 300;

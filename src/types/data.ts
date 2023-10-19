@@ -1,7 +1,7 @@
 export type DataType = {
   title: string;
   thumbnail: {
-    trending?: {
+    trending: {
       small: string;
       large: string;
     };
