@@ -1,0 +1,6 @@
+.recommendedContentList {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  column-gap: 40px;
+  row-gap: 32px;
+}

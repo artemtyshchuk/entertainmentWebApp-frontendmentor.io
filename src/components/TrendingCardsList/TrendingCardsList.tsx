@@ -3,7 +3,7 @@ import styles from "./TrendingCardsList.module.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { DataType, TrendingCardsType } from "types";
+import { DataType } from "types";
 
 interface TrendingCardsListProps {
   cards: DataType[];
