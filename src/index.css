@@ -29,10 +29,10 @@
 
 .hoverCardVisible {
   position: absolute;
-  left: 24px;
+  left: 0;
   top: 0;
-  right: 29px;
-  bottom: 24px;
+  right: 69px;
+  bottom: 0;
   background-color: black;
   opacity: 0.6;
   transition: opacity 0.3s;
@@ -45,4 +45,31 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--dark-blue);
+}
+
+ul {
+  padding: 0;
+}
+
+.trendingTitle {
+  margin-bottom: 25px;
+  font-family: "Outfit";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.5px;
+  color: var(--white);
+}
+
+.recommendationTitle {
+  margin-top: 40px;
+  margin-bottom: 32px;
+  font-family: "Outfit";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.5px;
+  color: var(--white);
 }
