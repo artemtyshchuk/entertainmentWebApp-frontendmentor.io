@@ -21,3 +21,36 @@ export const modifyData = async (shows: DataType[]) => {
   //   }
   // });
 };
+
+export const RecommendedContentData = async (shows: DataType[]) => {
+  const res = await fetch("db.json");
+  const data = (await res.json()) as DataType[];
+
+  const filteredData = data
+    .filter((show) => show.isTrending === false)
+    .map((show) => ({ ...show, isBookmarked: false }));
+
+  return filteredData;
+};
+
+export const moviesListData = async (shows: DataType[]) => {
+  const res = await fetch("db.json");
+  const data = (await res.json()) as DataType[];
+
+  const filteredData = data
+    .filter((show) => show.category === "Movie")
+    .map((show) => ({ ...show, isBookmarked: false }));
+
+  return filteredData;
+};
+
+export const tvSerieListData = async (shows: DataType[]) => {
+  const res = await fetch("db.json");
+  const data = (await res.json()) as DataType[];
+
+  const filteredData = data
+    .filter((show) => show.category === "TV Series")
+    .map((show) => ({ ...show, isBookmarked: false }));
+
+  return filteredData;
+};

@@ -1,8 +1,9 @@
+import { RecommendedContentList } from "components/RecommendedContentList";
 import { Search } from "components/Search";
 import { TrendingCardsList } from "components/TrendingCardsList";
 import { useCallback, useEffect, useState } from "react";
 import { DataType } from "types";
-import { modifyData } from "utils/data";
+import { RecommendedContentData, modifyData } from "utils/data";
 
 interface HomePageProps {
   data: DataType[];
@@ -10,12 +11,15 @@ interface HomePageProps {
 
 export const HomePage = ({ data }: HomePageProps) => {
   const [shows, setShows] = useState<DataType[]>([]);
+  const [recContentList, setRecContentList] = useState<DataType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = useCallback(async () => {
     const result = await modifyData(data);
+    const recContentListResult = await RecommendedContentData(data);
     console.log(result);
     setShows(result);
+    setRecContentList(recContentListResult);
     setIsLoading(false);
   }, [data]);
 
@@ -29,6 +33,11 @@ export const HomePage = ({ data }: HomePageProps) => {
       <p className="trendingTitle">Trending</p>
       {isLoading ? "Loading" : <TrendingCardsList cards={shows} />}
       <p className="recommendationTitle">Recommended for you</p>
+      {isLoading ? (
+        "Loading"
+      ) : (
+        <RecommendedContentList cards={recContentList} />
+      )}
     </div>
   );
 };

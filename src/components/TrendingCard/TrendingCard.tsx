@@ -6,8 +6,6 @@ import { BookmarkButton } from "components/BookmarkButton";
 import { HoverCard } from "components/HoverCard";
 import { useState } from "react";
 
-// interface TrendingCardProps extends TrendingCardsType {}
-
 export const TrendingCard = (props: TrendingCardsType) => {
   const { category, rating, trending, title, year, bookmarked } = props;
 
@@ -35,7 +33,7 @@ export const TrendingCard = (props: TrendingCardsType) => {
             alt={title}
           />
         )}
-        <HoverCard hover={hover} />
+        <HoverCard hoverRecommended={false} hover={hover} />
         <div className={styles.trendingCardInfoWrapper}>
           <div className={styles.trendingCardExtraInfo}>
             <p className={styles.year}>{year}</p>

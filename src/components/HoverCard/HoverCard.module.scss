@@ -47,3 +47,36 @@
   margin-right: 19px;
   fill: var(--dark-blue);
 }
+
+.hoverButtonRecCard {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  position: relative;
+  top: 61px;
+  left: 84px;
+
+  width: 117px;
+  height: 48px;
+  border-radius: 28.5px;
+  opacity: 1;
+  background: white;
+  border: none;
+
+  font-family: "Outfit";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--dark-blue);
+  cursor: pointer;
+  &:hover {
+    .playIcon {
+      fill: black;
+      transition: fill 0.3s;
+    }
+  }
+}

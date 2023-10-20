@@ -20,7 +20,6 @@
   max-width: 89%;
   padding-top: 32px;
   margin-left: 164px;
-  /* padding: 0 32px; */
 }
 
 .hoverCardHiden {
@@ -31,8 +30,24 @@
   position: absolute;
   left: 0;
   top: 0;
-  right: 69px;
+  right: 63px;
   bottom: 0;
+  background-color: black;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+
+.hoverRecCardHiden {
+  opacity: 0;
+}
+
+.hoverRecCardVisible {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 23px;
+  bottom: 56px;
   background-color: black;
   opacity: 0.6;
   transition: opacity 0.3s;

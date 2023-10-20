@@ -1,0 +1,71 @@
+.recommendedCard {
+}
+
+.recommendedCardWrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.recommendedCardImage {
+  width: 280px;
+  height: 174px;
+  border-radius: 8px;
+}
+
+.recommendedCardInfoWrapper {
+  margin-top: 10px;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.recommendedCardExtraInfo {
+  width: 160px;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  justify-content: space-around;
+}
+
+.year {
+  font-family: "Outfit";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: var(--white);
+}
+
+.dot {
+  font-size: 15px;
+  color: var(--white);
+}
+
+.category {
+  font-family: "Outfit";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: var(--white);
+}
+
+.rating {
+  font-family: "Outfit";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: var(--white);
+}
+
+.title {
+  font-family: "Outfit";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--white);
+}
+
+.icon {
+  fill: var(--white);
+}

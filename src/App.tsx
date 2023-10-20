@@ -13,8 +13,8 @@ function App() {
       <Main>
         <Routes>
           <Route path="/" element={<HomePage data={[]} />} />
-          <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/tv-series" element={<TVSeriesPage />} />
+          <Route path="/movies" element={<MoviesPage data={[]} />} />
+          <Route path="/tv-series" element={<TVSeriesPage data={[]} />} />
           <Route path="/bookmarked" element={<BookmarkedPage />} />
         </Routes>
       </Main>
