@@ -3,8 +3,6 @@
 
 .trendingCardWrapper {
   position: relative;
-  padding-left: 24px;
-  padding-bottom: 24px;
   cursor: pointer;
 }
 
@@ -16,8 +14,8 @@
 
 .trendingCardInfoWrapper {
   position: absolute;
-  bottom: 40px;
-  left: 40px;
+  bottom: 20px;
+  left: 20px;
 
   display: grid;
   grid-template-rows: auto auto;

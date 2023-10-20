@@ -26,8 +26,9 @@ export const HomePage = ({ data }: HomePageProps) => {
   return (
     <div>
       <Search placeholder={"Search for movies or TV series"} />
-
+      <p className="trendingTitle">Trending</p>
       {isLoading ? "Loading" : <TrendingCardsList cards={shows} />}
+      <p className="recommendationTitle">Recommended for you</p>
     </div>
   );
 };
