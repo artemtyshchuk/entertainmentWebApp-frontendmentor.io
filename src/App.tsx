@@ -12,7 +12,17 @@ function App() {
       <Header />
       <Main>
         <Routes>
-          <Route path="/" element={<HomePage data={[]} />} />
+          <Route
+            path="/"
+            element={
+              <HomePage
+                data={[]}
+                onSearch={function (filterResults: string): void {
+                  throw new Error("Function not implemented.");
+                }}
+              />
+            }
+          />
           <Route path="/movies" element={<MoviesPage data={[]} />} />
           <Route path="/tv-series" element={<TVSeriesPage data={[]} />} />
           <Route path="/bookmarked" element={<BookmarkedPage />} />
