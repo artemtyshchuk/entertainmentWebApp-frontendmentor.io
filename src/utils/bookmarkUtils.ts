@@ -1,3 +1,5 @@
+import { DataType } from "types";
+
 export async function bookmarkUtils(
   method: string = "GET",
   title: string = ""
@@ -14,7 +16,7 @@ export async function bookmarkUtils(
   }
 
   const response = await fetch("db.json", options);
-  const data = await response.json();
+  const data = (await response.json()) as DataType[];
 
   return data;
 }
