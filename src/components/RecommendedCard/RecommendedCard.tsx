@@ -20,23 +20,25 @@ export const RecommendedCard = (props: CardsType) => {
   };
 
   return (
-    <div
-      className={styles.recommendedCard}
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
-    >
+    <div className={styles.recommendedCard}>
       <div className={styles.recommendedCardWrapper}>
-        {regular && (
-          <img
-            className={styles.recommendedCardImage}
-            src={regular.large}
-            alt={title}
+        <div
+          className={styles.recommendedCardHover}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+        >
+          {regular && (
+            <img
+              className={styles.recommendedCardImage}
+              src={regular.large}
+              alt={title}
+            />
+          )}
+          <HoverRecommendedCard
+            hoverRecommended={hoverRecommended}
+            hover={false}
           />
-        )}
-        <HoverRecommendedCard
-          hoverRecommended={hoverRecommended}
-          hover={false}
-        />
+        </div>
 
         <div className={styles.recommendedCardInfoWrapper}>
           <div className={styles.recommendedCardExtraInfo}>
