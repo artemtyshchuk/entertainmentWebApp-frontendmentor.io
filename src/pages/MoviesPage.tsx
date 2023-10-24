@@ -7,20 +7,20 @@ import { DataType } from "types";
 import { moviesListData } from "utils/data";
 
 interface MoviesPageProps {
-  data: DataType[];
+  moviesData: DataType[];
 }
 
-export const MoviesPage = ({ data }: MoviesPageProps) => {
+export const MoviesPage = ({ moviesData }: MoviesPageProps) => {
   const [moviesList, setMoviesList] = useState<DataType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const { filterResults, filteredResults, isSearching } = useSearch();
 
   const fetchData = useCallback(async () => {
-    const moviesListResult = await moviesListData(data);
+    const moviesListResult = await moviesListData(moviesData);
     setMoviesList(moviesListResult);
     setIsLoading(false);
-  }, [data]);
+  }, [moviesData]);
 
   useEffect(() => {
     fetchData();
