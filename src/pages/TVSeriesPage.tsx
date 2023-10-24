@@ -7,20 +7,20 @@ import { DataType } from "types";
 import { tvSerieListData } from "utils/data";
 
 interface TVSeriesPageProps {
-  data: DataType[];
+  tvSeriesData: DataType[];
 }
 
-export const TVSeriesPage = ({ data }: TVSeriesPageProps) => {
+export const TVSeriesPage = ({ tvSeriesData }: TVSeriesPageProps) => {
   const [tvSeriesList, setTvSeriesList] = useState<DataType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const { filterResults, filteredResults, isSearching } = useSearch();
 
   const fetchData = useCallback(async () => {
-    const tvSeriesListResult = await tvSerieListData(data);
+    const tvSeriesListResult = await tvSerieListData(tvSeriesData);
     setTvSeriesList(tvSeriesListResult);
     setIsLoading(false);
-  }, [data]);
+  }, [tvSeriesData]);
 
   useEffect(() => {
     fetchData();
