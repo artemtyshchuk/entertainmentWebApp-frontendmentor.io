@@ -5,9 +5,14 @@ import { ReactComponent as MovieIcon } from "assets/icon-nav-movies.svg";
 import { useState } from "react";
 import { HoverRecommendedCard } from "components/HoverCard";
 import { BookmarkButtonRecCard } from "components/BookmarkButton";
+import { useBookmark } from "hooks/useBookmark";
 
 export const RecommendedCard = (props: CardsType) => {
   const { bookmarked, category, rating, title, year, regular } = props;
+  const { isBookmarked, isBookmarking, handleBookmark } = useBookmark({
+    title,
+    bookmarked,
+  });
 
   const [hoverRecommended, setHoverRecommended] = useState(false);
 
@@ -57,7 +62,14 @@ export const RecommendedCard = (props: CardsType) => {
             <p className={styles.title}>{title}</p>
           </div>
         </div>
-        {bookmarked ? <BookmarkButtonRecCard /> : <BookmarkButtonRecCard />}
+        {isBookmarking ? (
+          ""
+        ) : (
+          <BookmarkButtonRecCard
+            isBookmarked={isBookmarked}
+            onClick={handleBookmark}
+          />
+        )}
       </div>
     </div>
   );

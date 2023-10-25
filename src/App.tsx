@@ -28,7 +28,10 @@ function App() {
             path="/tv-series"
             element={<TVSeriesPage tvSeriesData={[]} />}
           />
-          <Route path="/bookmarked" element={<BookmarkedPage />} />
+          <Route
+            path="/bookmarked"
+            element={<BookmarkedPage tvSeriesData={[]} moviesData={[]} />}
+          />
         </Routes>
       </Main>
     </>
