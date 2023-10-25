@@ -1,5 +1,4 @@
 import { DataType } from "types";
-// import { bookmarkUtils } from "./bookmarkUtils";
 
 export const modifyData = async (shows: DataType[]) => {
   const bookmarkUtils = async (method: string = "GET", title: string = "") => {

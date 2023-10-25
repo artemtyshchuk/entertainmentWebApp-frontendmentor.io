@@ -48,6 +48,71 @@
   z-index: 0;
 }
 
+.bookmarkButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--dark-blue);
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.activeBookmarkButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  background-color: var(--white);
+  .bookmarkIcon {
+    opacity: 1;
+    stroke: var(--dark-blue);
+  }
+}
+
+.bookmarkRecButton {
+  position: absolute;
+  top: 10px;
+  right: 35px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--dark-blue);
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.activeRecBookmarkButton {
+  position: absolute;
+  top: 10px;
+  right: 35px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--white);
+  opacity: 1;
+  cursor: pointer;
+  .bookmarkIcon {
+    opacity: 1;
+    stroke: var(--dark-blue);
+  }
+}
+
+.bookmarkIcon {
+  opacity: 1;
+  stroke: var(--white);
+}
+
 body {
   font-family: "Outfit", serif;
   font-weight: 300;
