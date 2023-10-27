@@ -57,7 +57,10 @@ export const TrendingCard = (props: TrendingCardsType) => {
           </div>
         </div>
         {isBookmarking ? (
-          ""
+          <BookmarkButton
+            isBookmarked={isBookmarked}
+            onClick={handleBookmark}
+          />
         ) : (
           <BookmarkButton
             isBookmarked={isBookmarked}

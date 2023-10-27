@@ -21,13 +21,13 @@ export const useBookmark = ({ title, bookmarked }: useBookmarkProps) => {
       (item) => item.title === title
     );
 
-    if (isTitleInBookmarks) {
-      const result = await bookmarkUtils("DELETE", title);
-      console.log(result);
-    } else {
-      const result = await bookmarkUtils("POST", title);
-      console.log(result);
-    }
+    // if (isTitleInBookmarks) {
+    //   const result = await bookmarkUtils("POST", title);
+    //   console.log(result);
+    // } else {
+    //   const result = await bookmarkUtils("DELETE", title);
+    //   console.log(result);
+    // }
 
     setIsBookmarked((el) => !el);
     setIsBookmarking(false);
