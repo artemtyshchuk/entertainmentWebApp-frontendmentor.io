@@ -32,7 +32,7 @@ export const getTrending = async (shows: DataType[]) => {
 
   const filteredData = data
     .filter((show) => show.isTrending === true)
-    .map((show) => ({ ...show, isBookmarked: true }));
+    .map((show) => ({ ...show, isBookmarked: false }));
 
   return filteredData;
 };
