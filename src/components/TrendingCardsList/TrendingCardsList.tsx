@@ -21,13 +21,49 @@ export const TrendingCardsList = ({ cards }: TrendingCardsListProps) => {
       {
         breakpoint: 1440,
         settings: {
-          slidesToShow: 1.46,
+          slidesToShow: 2.5,
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 1325,
+        settings: {
+          slidesToShow: 2.1,
+        },
+      },
+      {
+        breakpoint: 1201,
+        settings: {
+          slidesToShow: 1.7,
+        },
+      },
+      {
+        breakpoint: 993,
+        settings: {
+          slidesToShow: 1.5,
+        },
+      },
+      {
+        breakpoint: 769,
         settings: {
           slidesToShow: 1.4,
+        },
+      },
+      {
+        breakpoint: 577,
+        settings: {
+          slidesToShow: 1.4,
+        },
+      },
+      {
+        breakpoint: 375,
+        settings: {
+          slidesToShow: 1.3,
+        },
+      },
+      {
+        breakpoint: 320,
+        settings: {
+          slidesToShow: 1.1,
         },
       },
     ],

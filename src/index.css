@@ -147,3 +147,122 @@ ul {
   letter-spacing: -0.5px;
   color: var(--white);
 }
+
+@media (max-width: 1439px) {
+  .bookmarkRecButton {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--dark-blue);
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+    max-width: 89%;
+    padding-top: 0;
+    margin-left: 35px;
+  }
+  .bookmarkRecButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--dark-blue);
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  .activeRecBookmarkButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--white);
+    opacity: 1;
+    cursor: pointer;
+    .bookmarkIcon {
+      opacity: 1;
+      stroke: var(--dark-blue);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+    max-width: 93%;
+    padding-top: 0;
+    margin-left: 10px;
+  }
+  .trendingTitle {
+    margin-bottom: 25px;
+    font-family: "Outfit";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    color: var(--white);
+  }
+
+  .recommendationTitle {
+    margin-top: 40px;
+    margin-bottom: 32px;
+    font-family: "Outfit";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    color: var(--white);
+  }
+
+  .bookmarkButton {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--dark-blue);
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  .activeBookmarkButton {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    background-color: var(--white);
+    .bookmarkIcon {
+      opacity: 1;
+      stroke: var(--dark-blue);
+    }
+  }
+}

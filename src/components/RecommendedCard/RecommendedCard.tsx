@@ -26,12 +26,12 @@ export const RecommendedCard = (props: CardsType) => {
 
   return (
     <div className={styles.recommendedCard}>
-      <div className={styles.recommendedCardWrapper}>
-        <div
-          className={styles.recommendedCardHover}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-        >
+      <div
+        className={styles.recommendedCardWrapper}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+      >
+        <div className={styles.recommendedCardHover}>
           {regular && (
             <img
               className={styles.recommendedCardImage}
