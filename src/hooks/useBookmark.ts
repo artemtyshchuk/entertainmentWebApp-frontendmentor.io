@@ -12,7 +12,7 @@ export const useBookmark = ({ title, bookmarked }: useBookmarkProps) => {
   const [isBookmarking, setIsBookmarking] = useState(false);
 
   const handleBookmark = async () => {
-    setIsBookmarking(true);
+    // setIsBookmarking(true);
     const userBookmarks = await bookmarkUtils();
 
     if (!userBookmarks) return;
@@ -21,16 +21,16 @@ export const useBookmark = ({ title, bookmarked }: useBookmarkProps) => {
       (item) => item.title === title
     );
 
-    // if (isTitleInBookmarks) {
-    //   const result = await bookmarkUtils("POST", title);
-    //   console.log(result);
-    // } else {
-    //   const result = await bookmarkUtils("DELETE", title);
-    //   console.log(result);
-    // }
+    if (isTitleInBookmarks) {
+      const result = await bookmarkUtils("POST", title);
+      console.log(result);
+    } else {
+      const result = await bookmarkUtils("DELETE", title);
+      console.log(result);
+    }
 
     setIsBookmarked((el) => !el);
-    setIsBookmarking(false);
+    // setIsBookmarking(false);
   };
   return { isBookmarked, isBookmarking, handleBookmark };
 };

@@ -14,7 +14,7 @@ export const bookmarkUtils = async (
     options.body = JSON.stringify({ title });
   }
 
-  const response = await fetch("db.json", options);
+  const response = await fetch("db.json");
   const data = (await response.json()) as DataType[];
 
   return data;

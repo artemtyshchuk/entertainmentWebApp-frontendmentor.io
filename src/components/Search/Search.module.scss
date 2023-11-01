@@ -38,3 +38,72 @@ input[type="search"]::-webkit-search-cancel-button {
   border-bottom: 1px solid var(--greyish-blue);
   caret-color: var(--red-color);
 }
+
+@media (max-width: 1439px) {
+  //1201
+}
+
+@media (max-width: 1200px) {
+  //993
+}
+
+@media (max-width: 992px) {
+  //769
+}
+
+@media (max-width: 768px) {
+  //577
+  .search {
+    background-color: var(--dark-blue);
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .input {
+    margin-left: 15px;
+    padding-bottom: 15px;
+    height: 46px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: var(--white);
+    background-color: var(--dark-blue);
+
+    font-family: "Outfit";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 576px) {
+  .search {
+    background-color: var(--dark-blue);
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .input {
+    margin-left: 15px;
+    padding-bottom: 15px;
+    height: 46px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: var(--white);
+    background-color: var(--dark-blue);
+
+    font-family: "Outfit";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+}

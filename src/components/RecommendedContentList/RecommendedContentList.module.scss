@@ -4,3 +4,40 @@
   column-gap: 40px;
   row-gap: 32px;
 }
+
+@media (max-width: 1439px) {
+  //1201
+  .recommendedContentList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    row-gap: 32px;
+  }
+}
+
+@media (max-width: 1200px) {
+  //993
+}
+
+@media (max-width: 992px) {
+  //769
+  .recommendedContentList {
+    display: grid;
+    grid-template-columns: repeat(2, 280px);
+    justify-content: space-between;
+    row-gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  //577
+  .recommendedContentList {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+}

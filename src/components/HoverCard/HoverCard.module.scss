@@ -1,13 +1,5 @@
-// .hoverCard {
-//   position: absolute;
-//   background-color: black;
-// }
-
 .hoverCard {
   position: absolute;
-
-  // background-color: black;
-  // opacity: 0.25;
 }
 
 .hoverButton {
@@ -77,6 +69,89 @@
     .playIcon {
       fill: black;
       transition: fill 0.3s;
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  //1201
+}
+
+@media (max-width: 1200px) {
+  //993
+}
+
+@media (max-width: 992px) {
+  //769
+}
+
+@media (max-width: 768px) {
+  //577
+  .hoverButton {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    top: 60px;
+    left: 120px;
+
+    width: 117px;
+    height: 48px;
+    border-radius: 28.5px;
+    opacity: 1;
+    background: white;
+    border: none;
+
+    font-family: "Outfit";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: var(--dark-blue);
+    cursor: pointer;
+    &:hover {
+      .playIcon {
+        fill: black;
+        transition: fill 0.3s;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .hoverButton {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    top: 42px;
+    left: 69px;
+
+    width: 117px;
+    height: 48px;
+    border-radius: 28.5px;
+    opacity: 1;
+    background: white;
+    border: none;
+
+    font-family: "Outfit";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: var(--dark-blue);
+    cursor: pointer;
+    &:hover {
+      .playIcon {
+        fill: black;
+        transition: fill 0.3s;
+      }
     }
   }
 }

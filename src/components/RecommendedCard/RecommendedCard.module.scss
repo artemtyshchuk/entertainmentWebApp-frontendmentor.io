@@ -75,3 +75,33 @@
 .icon {
   fill: var(--white);
 }
+
+@media (max-width: 1439px) {
+  //1201
+}
+
+@media (max-width: 1200px) {
+  //993
+}
+
+@media (max-width: 992px) {
+  //769
+  .recommendedCardWrapper {
+    position: relative;
+    cursor: pointer;
+    width: 280px;
+  }
+  .recommendedCardInfoWrapper {
+    margin-top: 10px;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  //577
+}
+
+@media (max-width: 576px) {
+}

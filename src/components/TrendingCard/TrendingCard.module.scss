@@ -79,3 +79,109 @@
   width: 12px;
   height: 12px;
 }
+
+@media (max-width: 1439px) {
+  //1201
+}
+
+@media (max-width: 1200px) {
+  //993
+}
+
+@media (max-width: 992px) {
+  //769
+}
+
+@media (max-width: 768px) {
+  //577
+  .trendingCardWrapper {
+    position: relative;
+    cursor: pointer;
+    width: 340px;
+    height: 180px;
+  }
+
+  .trendingCardImage {
+    width: 340px;
+    height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 576px) {
+  .trendingCardWrapper {
+    position: relative;
+    cursor: pointer;
+    width: 240px;
+    height: 140px;
+  }
+
+  .trendingCardImage {
+    width: 240px;
+    height: 140px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .trendingCardInfoWrapper {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+
+    display: grid;
+    grid-template-rows: auto auto;
+  }
+
+  .trendingCardExtraInfo {
+    width: 160px;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    justify-content: space-around;
+  }
+
+  .year {
+    font-family: "Outfit";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    color: var(--white);
+  }
+
+  .dot {
+    font-size: 13px;
+    color: var(--white);
+  }
+
+  .category {
+    font-family: "Outfit";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    color: var(--white);
+  }
+
+  .rating {
+    font-family: "Outfit";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    color: var(--white);
+  }
+
+  .title {
+    font-family: "Outfit";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: var(--white);
+  }
+
+  .icon {
+    fill: var(--white);
+  }
+}
