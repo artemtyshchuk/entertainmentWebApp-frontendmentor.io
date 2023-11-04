@@ -6,6 +6,7 @@ import { BookmarkButton } from "components/BookmarkButton";
 import { HoverCard } from "components/HoverCard";
 import { useState } from "react";
 import { useBookmark } from "hooks/useBookmark";
+import { TrendingBookmarkSpinner } from "components/BookmarkSpinner";
 
 export const TrendingCard = (props: TrendingCardsType) => {
   const { category, rating, trending, title, year, bookmarked } = props;
@@ -57,10 +58,7 @@ export const TrendingCard = (props: TrendingCardsType) => {
           </div>
         </div>
         {isBookmarking ? (
-          <BookmarkButton
-            isBookmarked={isBookmarked}
-            onClick={handleBookmark}
-          />
+          <TrendingBookmarkSpinner />
         ) : (
           <BookmarkButton
             isBookmarked={isBookmarked}

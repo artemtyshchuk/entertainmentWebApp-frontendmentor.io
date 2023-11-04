@@ -1,29 +1,17 @@
 import { DataType } from "types";
+import { bookmarkUtils } from "./bookmarkUtils";
 
 export const modifyData = async (shows: DataType[]) => {
-  const bookmarkUtils = async (method: string = "GET", title: string = "") => {
-    const options: RequestInit = {
-      method: method,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    if (title) {
-      options.body = JSON.stringify({ title });
-    }
+  const user = await bookmarkUtils();
 
-    const response = await fetch("db.json", options);
-    const bookmarkedShows = (await response.json()) as DataType[];
+  const modifiedShows = shows.map((show) => {
+    const isBookmarked = user.some(
+      (bookmarkedShow) => bookmarkedShow.title === show.title
+    );
+    return { ...show, isBookmarked };
+  });
 
-    return shows.map((show) => {
-      const isBookmarked = bookmarkedShows.some(
-        (bookmarkedShow) => bookmarkedShow.title === show.title
-      );
-      return { ...show, isBookmarked };
-    });
-  };
-
-  return bookmarkUtils();
+  return modifiedShows;
 };
 
 export const getTrending = async (shows: DataType[]) => {
@@ -32,7 +20,10 @@ export const getTrending = async (shows: DataType[]) => {
 
   const filteredData = data
     .filter((show) => show.isTrending === true)
-    .map((show) => ({ ...show, isBookmarked: false }));
+    .map((show) => ({
+      ...show,
+      isBookmarked: show.isBookmarked === true ? true : false,
+    }));
 
   return filteredData;
 };
@@ -84,7 +75,7 @@ export const getTvSeries = async () => {
 
 export const getBookmarkedShows = async (data: DataType[]) => {
   const bookmarkedShows = await modifyData(data);
-  return bookmarkedShows.filter((el) => el.isBookmarked === true);
+  return bookmarkedShows.filter((el) => el.isBookmarked === false);
 };
 
 export const getfilteredData = async (result: string) => {

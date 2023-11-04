@@ -6,6 +6,8 @@ import { useState } from "react";
 import { HoverRecommendedCard } from "components/HoverCard";
 import { BookmarkButtonRecCard } from "components/BookmarkButton";
 import { useBookmark } from "hooks/useBookmark";
+import { ReactComponent as Spinner } from "assets/Spinner-0.4s-197px.svg";
+import { BookmarkSpinner } from "components/BookmarkSpinner";
 
 export const RecommendedCard = (props: CardsType) => {
   const { bookmarked, category, rating, title, year, regular } = props;
@@ -63,7 +65,7 @@ export const RecommendedCard = (props: CardsType) => {
           </div>
         </div>
         {isBookmarking ? (
-          ""
+          <BookmarkSpinner />
         ) : (
           <BookmarkButtonRecCard
             isBookmarked={isBookmarked}
