@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { bookmarkUtils } from "utils/bookmarkUtils";
 
 interface useBookmarkProps {
@@ -12,7 +12,7 @@ export const useBookmark = ({ title, bookmarked }: useBookmarkProps) => {
   const [isBookmarking, setIsBookmarking] = useState(false);
 
   const handleBookmark = async () => {
-    // setIsBookmarking(true);
+    setIsBookmarking(true);
     const userBookmarks = await bookmarkUtils();
 
     if (!userBookmarks) return;
@@ -29,8 +29,10 @@ export const useBookmark = ({ title, bookmarked }: useBookmarkProps) => {
       console.log(result);
     }
 
-    setIsBookmarked((el) => !el);
-    // setIsBookmarking(false);
+    setTimeout(() => {
+      setIsBookmarking(false);
+      setIsBookmarked((el) => !el);
+    }, 2000);
   };
   return { isBookmarked, isBookmarking, handleBookmark };
 };

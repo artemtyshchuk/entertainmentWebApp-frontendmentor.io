@@ -28,6 +28,7 @@
   width: 160px;
   display: grid;
   grid-template-columns: repeat(6, auto);
+  align-items: center;
   justify-content: space-around;
 }
 

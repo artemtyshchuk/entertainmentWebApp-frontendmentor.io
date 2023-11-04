@@ -1,0 +1,25 @@
+.bookmarkSpinner {
+  position: absolute;
+  top: 10px;
+  left: 236px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.trendingBookmarkSpinner {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  opacity: 1;
+  cursor: pointer;
+}
