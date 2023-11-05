@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { DataType } from "types";
+import { motion } from "framer-motion";
 
 interface TrendingCardsListProps {
   cards: DataType[];
@@ -69,11 +70,28 @@ export const TrendingCardsList = ({ cards }: TrendingCardsListProps) => {
     ],
   };
 
+  const listVariants = {
+    hidden: {
+      y: 0,
+      opacity: 0,
+    },
+    visible: (custom: number) => ({
+      opacity: 1,
+      transition: {
+        delay: custom * 0.1,
+      },
+    }),
+  };
+
   return (
-    <ul className={styles.trendingCardsList}>
+    <motion.ul
+      className={styles.trendingCardsList}
+      initial="hidden"
+      animate="visible"
+    >
       <Slider {...settings}>
-        {cards.map((data) => (
-          <li key={data.title}>
+        {cards.map((data, i) => (
+          <motion.li key={data.title} custom={i} variants={listVariants}>
             <TrendingCard
               category={data.category}
               rating={data.rating}
@@ -82,9 +100,9 @@ export const TrendingCardsList = ({ cards }: TrendingCardsListProps) => {
               year={data.year}
               bookmarked={data.isBookmarked ?? false}
             />
-          </li>
+          </motion.li>
         ))}
       </Slider>
-    </ul>
+    </motion.ul>
   );
 };

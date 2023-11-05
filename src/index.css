@@ -49,6 +49,10 @@
 }
 
 .bookmarkButton {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding-bottom: 6px;
   position: absolute;
   top: 15px;
   right: 15px;
@@ -62,6 +66,10 @@
 }
 
 .activeBookmarkButton {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding-bottom: 6px;
   position: absolute;
   top: 15px;
   right: 15px;
@@ -79,6 +87,11 @@
 }
 
 .bookmarkRecButton {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding-bottom: 6px;
+  position: absolute;
   position: absolute;
   top: 10px;
   left: 236px;
@@ -92,6 +105,11 @@
 }
 
 .activeRecBookmarkButton {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding-bottom: 6px;
+  position: absolute;
   position: absolute;
   top: 10px;
   left: 236px;
