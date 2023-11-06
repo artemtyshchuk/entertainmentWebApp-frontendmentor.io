@@ -1,4 +1,4 @@
-import { CardsType } from "types";
+import { CardsType, NotificationType } from "types";
 import styles from "./RecommendedCard.module.scss";
 import { ReactComponent as TVSeriesIcon } from "assets/icon-nav-tv-series.svg";
 import { ReactComponent as MovieIcon } from "assets/icon-nav-movies.svg";
@@ -8,12 +8,17 @@ import { BookmarkButtonRecCard } from "components/BookmarkButton";
 import { useBookmark } from "hooks/useBookmark";
 import { ReactComponent as Spinner } from "assets/Spinner-0.4s-197px.svg";
 import { BookmarkSpinner } from "components/BookmarkSpinner";
+import { useNotification } from "hooks/useNotification";
+import { Notification } from "components/Notification";
 
 export const RecommendedCard = (props: CardsType) => {
   const { bookmarked, category, rating, title, year, regular } = props;
+  const { handleNotification, notification } = useNotification();
+
   const { isBookmarked, isBookmarking, handleBookmark } = useBookmark({
     title,
     bookmarked,
+    handleNotification,
   });
 
   const [hoverRecommended, setHoverRecommended] = useState(false);
@@ -26,14 +31,18 @@ export const RecommendedCard = (props: CardsType) => {
     setHoverRecommended(false);
   };
 
+  const handlePlayButton = (notification: NotificationType) => {
+    handleNotification(notification);
+  };
+
   return (
     <div className={styles.recommendedCard}>
-      <div
-        className={styles.recommendedCardWrapper}
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
-      >
-        <div className={styles.recommendedCardHover}>
+      <div className={styles.recommendedCardWrapper}>
+        <div
+          className={styles.recommendedCardHover}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+        >
           {regular && (
             <img
               className={styles.recommendedCardImage}
@@ -44,6 +53,7 @@ export const RecommendedCard = (props: CardsType) => {
           <HoverRecommendedCard
             hoverRecommended={hoverRecommended}
             hover={false}
+            handlePlayButton={handlePlayButton}
           />
         </div>
 
@@ -70,6 +80,12 @@ export const RecommendedCard = (props: CardsType) => {
           <BookmarkButtonRecCard
             isBookmarked={isBookmarked}
             onClick={handleBookmark}
+          />
+        )}
+        {notification.active && (
+          <Notification
+            status={notification.status}
+            message={notification.message}
           />
         )}
       </div>
