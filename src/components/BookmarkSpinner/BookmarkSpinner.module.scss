@@ -23,3 +23,18 @@
   opacity: 1;
   cursor: pointer;
 }
+
+@media (max-width: 576px) {
+  .trendingBookmarkSpinner {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    opacity: 1;
+    cursor: pointer;
+  }
+}

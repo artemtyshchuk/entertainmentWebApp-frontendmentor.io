@@ -1,6 +1,6 @@
 export type NotificationType = {
-  active: boolean;
-  field: string;
+  active?: boolean;
+  field?: string;
   message: string;
   status: string;
 };

@@ -1,13 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { NotificationType } from "types";
 import { bookmarkUtils } from "utils/bookmarkUtils";
 
 interface useBookmarkProps {
   title: string;
   bookmarked: boolean;
-  // handleNotification: (result: NotificationType) => void
+  handleNotification: (result: NotificationType) => void;
 }
 
-export const useBookmark = ({ title, bookmarked }: useBookmarkProps) => {
+export const useBookmark = ({
+  title,
+  bookmarked,
+  handleNotification,
+}: useBookmarkProps) => {
   const [isBookmarked, setIsBookmarked] = useState(bookmarked);
   const [isBookmarking, setIsBookmarking] = useState(false);
 
@@ -22,16 +27,32 @@ export const useBookmark = ({ title, bookmarked }: useBookmarkProps) => {
     );
 
     if (isTitleInBookmarks) {
-      const result = await bookmarkUtils("POST", title);
-      console.log(result);
+      // setTimeout(() => {
+      //   handleNotification({
+      //     message: "Added to bookmarks",
+      //     status: "success",
+      //   });
+      // }, 1800);
     } else {
-      const result = await bookmarkUtils("DELETE", title);
-      console.log(result);
     }
 
     setTimeout(() => {
+      if (isBookmarked) {
+        handleNotification({
+          message: "Removed from bookmarks",
+          status: "error",
+        });
+      } else {
+        handleNotification({
+          message: "Added to bookmarks",
+          status: "success",
+        });
+      }
+    }, 1800);
+
+    setTimeout(() => {
       setIsBookmarking(false);
-      setIsBookmarked((el) => !el);
+      console.log(setIsBookmarked((el) => !el));
     }, 2000);
   };
   return { isBookmarked, isBookmarking, handleBookmark };
