@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NotificationType } from "types";
 import { bookmarkUtils } from "utils/bookmarkUtils";
 
@@ -16,25 +16,28 @@ export const useBookmark = ({
   const [isBookmarked, setIsBookmarked] = useState(bookmarked);
   const [isBookmarking, setIsBookmarking] = useState(false);
 
+  useEffect(() => {
+    const storedDataString = localStorage.getItem("bookmarkedData");
+    if (storedDataString) {
+      const storedData = JSON.parse(storedDataString) || {};
+      if (storedData[title] !== undefined) {
+        setIsBookmarked(storedData[title]);
+      }
+    }
+  }, [title]);
+
   const handleBookmark = async () => {
     setIsBookmarking(true);
     const userBookmarks = await bookmarkUtils();
 
     if (!userBookmarks) return;
 
-    const isTitleInBookmarks = userBookmarks.some(
-      (item) => item.title === title
-    );
-
-    if (isTitleInBookmarks) {
-      // setTimeout(() => {
-      //   handleNotification({
-      //     message: "Added to bookmarks",
-      //     status: "success",
-      //   });
-      // }, 1800);
-    } else {
-    }
+    const storedDataString = localStorage.getItem("bookmarkedData");
+    const updatedBookmarks = storedDataString
+      ? JSON.parse(storedDataString)
+      : {};
+    updatedBookmarks[title] = !isBookmarked;
+    localStorage.setItem("bookmarkedData", JSON.stringify(updatedBookmarks));
 
     setTimeout(() => {
       if (isBookmarked) {
@@ -52,8 +55,9 @@ export const useBookmark = ({
 
     setTimeout(() => {
       setIsBookmarking(false);
-      console.log(setIsBookmarked((el) => !el));
+      setIsBookmarked((el) => !el);
     }, 2000);
   };
+
   return { isBookmarked, isBookmarking, handleBookmark };
 };

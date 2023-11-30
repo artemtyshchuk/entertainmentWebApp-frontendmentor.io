@@ -61,6 +61,12 @@ export const tvSerieListData = async (shows: DataType[]) => {
   return filteredData;
 };
 
+export const getBookmarked = async (shows: DataType[]) => {
+  const res = await fetch("db.json");
+  const data = (await res.json()) as DataType[];
+  return data;
+};
+
 export const getMovies = async () => {
   const res = await fetch("db.json");
   const data = (await res.json()) as DataType[];
@@ -75,7 +81,7 @@ export const getTvSeries = async () => {
 
 export const getBookmarkedShows = async (data: DataType[]) => {
   const bookmarkedShows = await modifyData(data);
-  return bookmarkedShows.filter((el) => el.isBookmarked === false);
+  return bookmarkedShows.filter((el) => el.isBookmarked === true);
 };
 
 export const getfilteredData = async (result: string) => {
