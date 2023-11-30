@@ -6,7 +6,6 @@ import { useState } from "react";
 import { HoverRecommendedCard } from "components/HoverCard";
 import { BookmarkButtonRecCard } from "components/BookmarkButton";
 import { useBookmark } from "hooks/useBookmark";
-import { ReactComponent as Spinner } from "assets/Spinner-0.4s-197px.svg";
 import { BookmarkSpinner } from "components/BookmarkSpinner";
 import { useNotification } from "hooks/useNotification";
 import { Notification } from "components/Notification";
