@@ -1,6 +1,6 @@
 .moviesList {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, minmax(auto, 306px));
   column-gap: 40px;
   row-gap: 32px;
 }
