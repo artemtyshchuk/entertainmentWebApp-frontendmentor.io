@@ -33,6 +33,7 @@
   opacity: 0.6;
   transition: opacity 0.3s;
   z-index: 0;
+  border-radius: 8px;
 }
 
 .hoverRecCardHiden {
@@ -46,6 +47,7 @@
   opacity: 0.6;
   transition: opacity 0.3s;
   z-index: 0;
+  border-radius: 8px;
 }
 
 .bookmarkButton {

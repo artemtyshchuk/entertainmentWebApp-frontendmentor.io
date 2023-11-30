@@ -10,15 +10,10 @@ interface BookmarkedPageProps {
   moviesData: DataType[];
 }
 
-export const BookmarkedPage = ({
-  tvSeriesData,
-  moviesData,
-}: BookmarkedPageProps) => {
+export const BookmarkedPage = ({ moviesData }: BookmarkedPageProps) => {
   const { filterResults, filteredResults, isSearching } = useSearch();
   const { shows: bookmarkedMovies, isLoading: isBookmarkedMoviesLoading } =
     useBookmarkedDataFetcher(moviesData);
-  const { shows: bookmarkedTvSeries, isLoading: isBookmarkedTvSeriesLoading } =
-    useBookmarkedDataFetcher(tvSeriesData);
 
   const showsHandler = (shows: DataType[]) => {
     if (shows.length === 0) {

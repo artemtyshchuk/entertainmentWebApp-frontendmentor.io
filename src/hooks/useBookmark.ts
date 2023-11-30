@@ -51,12 +51,12 @@ export const useBookmark = ({
           status: "success",
         });
       }
-    }, 1800);
+    }, 800);
 
     setTimeout(() => {
       setIsBookmarking(false);
       setIsBookmarked((el) => !el);
-    }, 2000);
+    }, 1000);
   };
 
   return { isBookmarked, isBookmarking, handleBookmark };
