@@ -33,8 +33,19 @@
 
 .headerIcons {
   fill: var(--greyish-blue);
-  &:hover path {
+}
+
+/* Для устройств с поддержкой наведения курсора (например, компьютеров) */
+@media (hover: hover) {
+  .headerIcons:hover path {
     fill: var(--white);
+  }
+}
+
+/* Для устройств без поддержки наведения курсора (например, сенсорных устройств) */
+@media (hover: none) {
+  .headerIcons:not(:hover) path {
+    fill: var(--greyish-blue);
   }
 }
 
