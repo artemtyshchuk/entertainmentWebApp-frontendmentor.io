@@ -18,7 +18,9 @@ export const Header = ({}: HeaderProps) => {
     <header className={styles.header}>
       <div className={styles.headerWrapper}>
         <div className={styles.headerLogo}>
-          <LogoIcon />
+          <Link to={"/"}>
+            <LogoIcon />
+          </Link>
         </div>
         <div className={styles.headerNavButtonsWrapper}>
           <div>
