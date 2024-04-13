@@ -12,10 +12,15 @@ interface BookmarkedPageProps {
 
 export const BookmarkedPage = ({ moviesData }: BookmarkedPageProps) => {
   const { filterResults, filteredResults, isSearching } = useSearch();
-  const { shows: bookmarkedMovies, isLoading: isBookmarkedMoviesLoading } =
-    useBookmarkedDataFetcher(moviesData);
+  const {
+    shows: bookmarkedMovies,
+    isLoading: isBookmarkedMoviesLoading,
+    error,
+  } = useBookmarkedDataFetcher(moviesData);
 
   const showsHandler = (shows: DataType[]) => {
+    if (error) return <p className="errorMessage">tes{error}</p>;
+
     if (shows.length === 0) {
       return (
         <p className="trendingTitle">

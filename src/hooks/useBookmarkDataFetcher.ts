@@ -6,22 +6,36 @@ import { useGetBookmark } from "hooks/useGetBookmark";
 export const useBookmarkedDataFetcher = (data: DataType[]) => {
   const [shows, setShows] = useState<DataType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const bookmarkedData = useGetBookmark();
 
   const fetchData = useCallback(async () => {
-    const modifiedShows = await getBookmarked(data);
+    setIsLoading(true);
+    setError(null);
+    try {
+      const modifiedShows = await getBookmarked(data);
 
-    const bookmarkedShows = modifiedShows.filter(
-      (show) => bookmarkedData[show.title]
-    );
+      const bookmarkedShows = modifiedShows.filter(
+        (show) => bookmarkedData[show.title]
+      );
 
-    setShows(bookmarkedShows);
-    setIsLoading(false);
+      setShows(bookmarkedShows);
+    } catch (error) {
+      setError("Error fetching data");
+    } finally {
+      setIsLoading(false);
+    }
   }, [data, bookmarkedData]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
-  return { shows, isLoading };
+  useEffect(() => {
+    if (shows.length === 0 && !isLoading && !error) {
+      fetchData();
+    }
+  }, [shows, isLoading, error, fetchData]);
+
+  return { shows, isLoading, error };
 };

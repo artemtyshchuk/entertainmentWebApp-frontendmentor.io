@@ -22,7 +22,6 @@ export const HomePage = ({ data, onSearch }: HomePageProps) => {
   const fetchData = useCallback(async () => {
     const result = await getTrending(data);
     const recContentListResult = await RecommendedContentData(data);
-    console.log(result);
     setShows(result);
     setRecContentList(recContentListResult);
     setIsLoading(false);
